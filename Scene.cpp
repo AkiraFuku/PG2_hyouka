@@ -242,9 +242,9 @@ void Scene::Draw() {
 			//UI
 			Novice::DrawSprite(kStageWidth, 0, uiGlaph_, 1.0f, 1.0f, 0.0f, WHITE);
 		
-			    numberDraw({890.0f  , 350.0f},40, 2);
+			numberDraw({890.0f  , 350.0f},40, 2);
 		
-				 numberDraw({890.0f  , 250.0f},40, 1);
+			numberDraw({890.0f  , 250.0f},40, 1);
 			for (int i = 0; i < player_->GetLife(); i++){
 				Novice::DrawSprite(i * 40 + 900, 400, akaDaikonn_,
 								   1.0f,
@@ -256,7 +256,7 @@ void Scene::Draw() {
 			break;
 		case GAMEOVER:
 			Novice::DrawSprite(0, 0, endGraph_, 1.0f, 1.0f, 0.0f, 0xFFFFFFFF);
-			 numberDraw({300.0f  , 500.0f},40, 0);
+			 numberDraw({300.0f  , 500.0f},40, 2);
 			 numberDraw({300.0f  , 300.0f},40, 0);
 			
 			break;

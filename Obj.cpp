@@ -1,4 +1,4 @@
-#include "Obj.h"
+ï»¿#include "Obj.h"
 
 void Obj::Draw() {}
 
@@ -17,12 +17,12 @@ Obj::Obj() {
 
 
 /// <summary>
-/// pos_‚ÌƒZƒbƒ^[
+/// pos_ã®ã‚»ãƒƒã‚¿ãƒ¼
 /// </summary>
 /// <param name="vector"></param>
 void Obj::SetPos(Vector2 vector) {pos_=vector;};
 /// <summary>
-/// lengeth‚Ìæ“¾
+/// lengethã®å–å¾—
 /// </summary>
 /// <param name="vector2"></param>
 /// <returns></returns>
@@ -42,7 +42,7 @@ float Lengeth(Vector2 posA, Vector2 posB) {
 
 }
 /// <summary>
-/// ³‹K‰»
+/// æ­£è¦åŒ–
 /// </summary>
 /// <param name="vector2"></param>
 /// <returns></returns>

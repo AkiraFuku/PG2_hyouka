@@ -1,6 +1,6 @@
-#include <Scoer.h>
+ï»¿#include <Scoer.h>
 /// <summary>
-/// ”‰F‚ÌŒ…”‚ğæ“¾‚·‚é
+/// æ•°å®‡ã®æ¡æ•°ã‚’å–å¾—ã™ã‚‹
 /// </summary>
 /// <param name="targetnum"></param>
 /// <returns></returns>
@@ -13,14 +13,14 @@ int GetDigit(int targetnum) {
 	return digit;
 }
 /// <summary>
-/// arrry‚Ì—v‘f”‚ğæ“¾‚·‚é
+/// arrryã®è¦ç´ æ•°ã‚’å–å¾—ã™ã‚‹
 /// </summary>
 /// <param name="targetnum">arry</param>
 /// <returns></returns>
 int GetDigit(std::vector<int> targetnum) { return 0; }
 	
 /// <summary>
-/// ”š‚ğ”z—ñ‚É•ÏŠ·‚·‚é
+/// æ•°å­—ã‚’é…åˆ—ã«å¤‰æ›ã™ã‚‹
 /// </summary>
 /// <param name="targetnum"></param>
 /// <returns></returns>
