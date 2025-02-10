@@ -1,5 +1,7 @@
 ﻿#include "Bullet.h"
-
+/// <summary>
+/// bulletのコンストラクタ
+/// </summary>
 Bullet::Bullet() { 
 	Bullet::isShot_ = false;
 	pos_ = {-1000.0f, -1000.0f};
@@ -9,11 +11,15 @@ Bullet::Bullet() {
 	GraphHandle_ = Novice::LoadTexture("./Resources/images/daikonn.png");
 
 }
-
+/// <summary>
+/// bulletのデストラクタ
+/// </summary>
 Bullet::~Bullet() {
 
 }
-
+/// <summary>
+/// bulletのアップデート
+/// </summary>
 void Bullet::Update() {
 	if (isShot_) {
 		///上方向に進ませる///
@@ -25,7 +31,9 @@ void Bullet::Update() {
 		}
 	}		
 }
-
+/// <summary>
+/// bulletの描画
+/// </summary>
 void Bullet::Draw() {
 	if (isShot_) {
 		Novice::DrawTriangle(
@@ -37,20 +45,25 @@ void Bullet::Draw() {
 			static_cast<int>(pos_.y + size_.y / 2.0f),
 			0xFFFFFFFF, kFillModeSolid);
 				
-					Novice::DrawSprite(
-						static_cast<int>(pos_.x - size_.x ),
-						static_cast<int>(pos_.y - size_.y / 2.0f),
-						GraphHandle_, 1.0f, 1.0f, 0.0f, WHITE);
+		Novice::DrawSprite(
+			static_cast<int>(pos_.x - size_.x ),
+			static_cast<int>(pos_.y - size_.y / 2.0f),
+			GraphHandle_, 1.0f, 1.0f, 0.0f, WHITE
+			);
 
 	}
 }
-
+/// <summary>
+/// bulletのリセット
+/// </summary>
 void Bullet::reset() {
 	pos_ = {-1000.0f, -1000.0f};
 	isShot_ = false;
 
 }
-
+/// <summary>
+/// bulletの移動
+/// </summary>
 void Bullet::Move() {
 	pos_.y -=Normarize(velocity_).y *speed_.y;
 	pos_.x -=Normarize(velocity_).x * speed_.x;

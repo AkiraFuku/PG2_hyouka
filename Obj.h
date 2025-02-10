@@ -19,7 +19,7 @@ public:
 	/// </summary>
 	virtual void Draw();
 	/// <summary>
-	/// ugoki
+	/// 動作
 	/// </summary>
 	virtual void Move();
 
@@ -36,5 +36,4 @@ protected:
 	Vector2 size_;
 	float radius_;
 	bool ishit_;	
-	//int GraphHandle_;
 };

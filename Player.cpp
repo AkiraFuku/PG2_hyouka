@@ -1,6 +1,8 @@
 ﻿#include "Player.h"
 
-
+/// <summary>
+/// playerのコンストラクタ
+/// </summary>
 Player::Player() { 
 	pos_ = {kStageWidth / 2.0f, kStageHeight / 2.0f + 256.0f};
 	size_ = {32.0f, 32.0f};
@@ -19,7 +21,9 @@ Player::Player() {
 	lifeGraphHandle_=0;
 
 }
-
+/// <summary>
+/// playerのデストラクタ
+/// </summary>
 Player::~Player() { 
 	pos_ = {kStageWidth / 2.0f, kStageHeight / 2.0f + 256.0f};
 
@@ -28,7 +32,9 @@ Player::~Player() {
 	}
 	
 }
-
+/// <summary>
+/// playerのリセット
+/// </summary>
 void Player::reset() {
 	pos_ = {kStageWidth / 2.0f, kStageHeight / 2.0f + 256.0f};
 	shotCoolTime_ = 10;
@@ -41,7 +47,10 @@ void Player::reset() {
 		bullet_[i]->reset();
 	}
 }
-
+/// <summary>
+/// playerの更新
+/// </summary>
+/// <param name="keys"></param>
 void Player::Update(const char* keys) {
 	if (keys==nullptr) {
 		return;
@@ -106,51 +115,53 @@ void Player::Update(const char* keys) {
 }
 
 
-
+/// <summary>
+/// playerの描画
+/// </summary>
 void Player::Draw() {
 
 	for (int i = 0; i < bulltNum_; i++){
 		bullet_[i]->Draw();
 	}
-	
-	//if (ishit_) {
-		if (!ishit_){
-			/*Novice::DrawBox(
-			    static_cast<int>(pos_.x - size_.x / 2.0f), 
-				static_cast<int>(pos_.y - size_.y / 2.0f),
-				static_cast<int>(pos_.x + size_.x / 2.0f),
-				static_cast<int>(pos_.y + size_.y / 2.0f),
-				0.0f,
-				0xFF0000FF, kFillModeSolid);*/
+	if (!ishit_){
+		
 			Novice::DrawSprite(
 					static_cast<int>(pos_.x - size_.x / 2.0f),
 					static_cast<int>(pos_.y - size_.y/ 2.0f),
 					GraphHandle_, 1.0f, 1.0f,
 					0.0f, WHITE);
-		} else {
-			if (static_cast<int>(hitCoolTime_) % 2 == 0) {
-				/*Novice::DrawBox(
-			    static_cast<int>(pos_.x - size_.x / 2.0f), 
-				static_cast<int>(pos_.y - size_.y / 2.0f),
-				static_cast<int>(pos_.x + size_.x / 2.0f),
-				static_cast<int>(pos_.y + size_.y / 2.0f),
-				0.0f,
-				0x00FF00FF, kFillModeSolid);*/
-				Novice::DrawSprite(
-					static_cast<int>(pos_.x - size_.x / 2.0f),
-					static_cast<int>(pos_.y - size_.y/ 2.0f),
-				GraphHandle_, 1.0f, 1.0f,
-				0.0f, WHITE);
-			}
+	} else {
+		if (static_cast<int>(hitCoolTime_) % 2 == 0) {
+			
+			Novice::DrawSprite(
+				static_cast<int>(pos_.x - size_.x / 2.0f),
+				static_cast<int>(pos_.y - size_.y/ 2.0f),
+			GraphHandle_, 1.0f, 1.0f,
+			0.0f, WHITE);
 		}
-	//}
+	}
+	
 	
 }
-
+/// <summary>
+/// playerの移動
+/// </summary>
 void Player::Move() {
 	pos_.y +=Normarize(velocity_).y *speed_.y;
 	pos_.x +=Normarize(velocity_).x * speed_.x;
 }
+/// <summary>
+/// lifeのセッター
+/// </summary>
+/// <param name="life"></param>
 void Player::SetLife(int life) { islife_ = life; };
+/// <summary>
+/// ishitのセッター
+/// </summary>
+/// <param name="ishit"></param>
 void Player::SetIsHit(bool ishit) { ishit_ = ishit; };
+/// <summary>/// 
+/// hitCoolTimeのセッター
+/// </summary>
+/// /// <param name="hitCoolTime"></param>
 void Player::SetHitCoolTime(int hitCoolTime) { hitCoolTime_ = hitCoolTime; };

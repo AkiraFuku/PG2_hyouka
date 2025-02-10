@@ -29,14 +29,11 @@ public:
     void SetScoer(int scoer) { scoer_ = scoer; };
 
 /// <summary>   
-    /// set life
     
 	void SetLife(int life) ;
 	void SetIsHit(bool ishit) ;
 	void SetHitCoolTime(int hitCoolTime) ;
    
-   
-
     int GetLife() { return islife_; };
     int GetScoer() { return scoer_; };
     Bullet* GetBullets(int i) { return bullet_[i]; };

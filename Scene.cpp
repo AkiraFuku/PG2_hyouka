@@ -71,7 +71,11 @@ void Scene::numberDraw(Vector2 pos,int width,int i ) {
 
 
 
-
+/// <summary>
+/// key入力によるシーンの更新
+/// </summary>
+/// <param name="keys"></param>
+/// <param name="preKeys"></param>
 void Scene::Update(const char* keys, const char* preKeys) {
 	switch (scene_){
 		case TITLE:
@@ -198,7 +202,9 @@ void Scene::Update(const char* keys, const char* preKeys) {
 	numberArray_[1]=NumberArray(timer_);
 	numberArray_[2]=NumberArray(player_->GetScoer());
 }
-
+/// <summary>
+/// sceneの描画
+/// </summary>
 void Scene::Draw() {
 
 	switch (scene_){

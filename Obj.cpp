@@ -11,13 +11,21 @@ Obj::Obj() {
 	size_ = {0.0f, 0.0f};
 	radius_ = 0.0f;
 	ishit_ = false;
-	//GraphHandle_ = -1;
+	
 }
 
 
 
+/// <summary>
+/// pos_のセッター
+/// </summary>
+/// <param name="vector"></param>
 void Obj::SetPos(Vector2 vector) {pos_=vector;};
-
+/// <summary>
+/// lengethの取得
+/// </summary>
+/// <param name="vector2"></param>
+/// <returns></returns>
 float Lengeth(Vector2 vector2) {
 	float lengeth_ = sqrtf(static_cast<float>(
 				pow(vector2.x, 2) +
@@ -33,7 +41,11 @@ float Lengeth(Vector2 posA, Vector2 posB) {
 	return lengeth_; 
 
 }
-
+/// <summary>
+/// 正規化
+/// </summary>
+/// <param name="vector2"></param>
+/// <returns></returns>
 Vector2 Normarize(Vector2 vector2) {
 	Vector2 vector;
 	

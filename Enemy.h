@@ -8,7 +8,6 @@ private:
     int playHandle_;
     bool isAlive_;
     int respawnTimer_;
-   // int enemyGraphHandle_;
 	int bombGraphHandle_[9];
     int GraphHandle_;
 
